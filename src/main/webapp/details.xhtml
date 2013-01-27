@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+        template="/templates/default.xhtml"
+        xmlns:rich="http://richfaces.org/rich">
+
+	<ui:define name="content">
+		<h:form>
+                    <rich:dataTable value="#{personBean.ownedCars}" var="item">
+			
+				<f:facet name="header">Rented cars</f:facet>
+				<rich:column>
+                                    <f:facet name="header">#{msg.carMake}</f:facet>
+					<h:outputText value="#{item.make}" />
+                                </rich:column>
+
+                                <rich:column>
+                                    <f:facet name="header">#{msg.carModel}</f:facet>
+					<h:outputText value="#{item.model}" />
+                                </rich:column>
+
+                                <rich:column>
+					<f:facet name="header">#{msg.action}</f:facet>
+                                        <h:commandButton value="#{msg.actionDelete}" action="#{personBean.disposeCar}" />
+                                </rich:column>
+
+                    </rich:dataTable>
+                    
+                    <h:commandButton value="POMOC">
+                        <rich:componentControl target="popup" operation="show" />
+                    </h:commandButton>
+                    
+<rich:popupPanel id="popup" modal="false" autosized="true" resizeable="false">
+        <f:facet name="header">
+            <h:outputText value="#{msg.mainHeading}" />
+        </f:facet>
+        <p>Pamiętaj, że samochód usuwany jest wyłącznie z przypisania do kierowcy a nie z bazy danych!!!</p>
+ 
+        <h:commandButton value="ZAMKNIJ" label="ZAMKNIJ" onclick="#{rich:component('popup')}.hide()"/>
+            
+
+</rich:popupPanel>
+                    
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>

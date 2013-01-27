@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<ui:define name="content">
+	
+		<h:form id="driverForm">
+			<h:panelGrid columns="3">
+				
+				<!-- validacje dla imienia zrobic z h:validate -->
+
+				<h:outputText value="#{msg.driverFirstNameLabel}" />
+				<h:inputText id="firstName" value="#{driverBean.driver.firstName}" required="#{true}"> 
+				<rich:validator />
+				
+				</h:inputText>
+				
+				<rich:message for="firstName" />
+				
+				
+				<h:outputText value="#{msg.driverLastNameLabel}" />
+				<h:inputText id="lastName" value="#{driverBean.driver.lastName}" required="#{true}" >
+				<rich:validator />
+				
+				</h:inputText>
+				
+				<rich:message for="lastName" />
+
+				<h:outputText value="#{msg.driverPesel}" />
+				<h:inputText id="pesel" value="#{driverBean.driver.pesel}"
+					validator="#{driverBean.uniquePin}" required="#{true}">
+					<!-- <f:validator validatorId="uniquePin" />-->
+					
+				</h:inputText>
+				<rich:message for="pesel"/>
+				
+				
+		
+				
+				<h:outputText value ="#{msg.driverEmail}" />
+				<h:inputText id="eMail" value="#{driverBean.driver.eMail}" required="true" label="Email Address" >
+ 				<f:validator validatorId="com.example.jeedemo.domain.EmailValidator" /> 
+				<rich:validator />
+				</h:inputText>
+				<rich:message for="eMail" />
+					
+
+				<h:outputText value="#{msg.driverDateOfBirth}" />
+				<rich:calendar value="#{driverBean.driver.dateOfBirth}" id="calendar" datePattern="dd.MM.yyyy" showApplyButton="#{true}"
+				style="width:200px" >
+				<rich:validator />
+				</rich:calendar>
+				<rich:message for="calendar" />
+
+
+
+
+				
+				
+			</h:panelGrid>
+			
+
+
+			<h:commandButton value="#{msg.driverAddLabel}" action="#{driverBean.addDriver}" />
+			
+			<h:panelGrid>
+				<h:messages id="messages" showDetail="#{true}"
+					showSummary="#{false}" />
+			</h:panelGrid>
+			
+			
+		</h:form>
+
+	</ui:define>
+</ui:composition>

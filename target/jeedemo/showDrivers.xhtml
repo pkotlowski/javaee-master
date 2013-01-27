@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+        template="/templates/default.xhtml"
+        xmlns:rich="http://richfaces.org/rich">
+
+	<ui:define name="content">
+            <h:form >
+                    
+                    <!--<rich:dataTable value="#{driverBean.allDrivers}" var="item" 
+                     onRowMouseOver="this.style.backgroundColor='#B5F3FB'"
+                     accept=""onRowMouseOut="this.style.backgroundColor='#fbbdb5'" 
+                     width="600" rows="15" reRender="ds"
+                     >        -->           
+                        <rich:dataTable value="#{driverBean.allDrivers}" var="item"
+                                        width="600" rows="15" styleClass="richTable"
+                                        rowClasses="rowOne, rowTwo"
+                                        >
+				<f:facet name="header">#{msg.driverAllLabel}</f:facet>
+				<rich:column>
+					<f:facet name="header">#{msg.driverFirstNameLabel}</f:facet>
+					<h:outputText value="#{item.firstName}" />
+				</rich:column>
+
+
+
+				<rich:column>
+					<f:facet name="header">#{msg.driverLastNameLabel}</f:facet>
+					<h:outputText value="#{item.lastName}" />
+				</rich:column>
+
+
+				<rich:column>
+					<f:facet name="header">#{msg.driverPesel}</f:facet>
+					<h:outputText value="#{item.pesel}" />
+				</rich:column>
+				
+				<rich:column>
+					<f:facet name="header">#{msg.driverDateOfBirth}</f:facet>
+					<h:outputText value="#{item.dateOfBirth}" />
+				</rich:column>
+				
+				<rich:column>
+					<f:facet name="header">#{msg.actionDelete}</f:facet>
+					<h:commandLink value="#{msg.actionDelete}" action="#{driverBean.deleteDriver}" />
+				</rich:column>
+                                
+				<rich:column>
+					<f:facet name="header">#{msg.actionDetails}</f:facet>
+					<h:commandLink value=" Details " action="#{driverBean.showDetails}"/>
+				</rich:column>
+
+			</rich:dataTable>
+                <h:messages globalOnly="true" />
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>

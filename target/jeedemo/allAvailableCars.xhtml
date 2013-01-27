@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<ui:define name="content">
+		<h:form >
+
+<rich:dataTable value="#{carBean.availableCars}" var="car" 
+onRowMouseOver="this.style.backgroundColor='#B5F3FB'"
+onRowMouseOut="this.style.backgroundColor='#fbbdb5'" 
+width="600" rows="15" reRender="ds"
+>
+
+    <f:facet name="header">
+        <h:outputText value="#{msg.carAvailableCarsTableHeader}" />
+    </f:facet>
+
+    <rich:column sortBy="#{car.make}">
+        <f:facet name="header">#{msg.carMake} </f:facet>
+        
+            <h:outputText value="#{car.make}"/>
+    </rich:column>
+
+    <rich:column >
+        <f:facet name="header">#{msg.carModel}</f:facet>
+            <h:outputText value="#{car.model}"/>
+    </rich:column>
+
+    <rich:column >
+        <f:facet name="header">#{msg.carYearOfProduction}</f:facet>
+            <h:outputText value="#{car.yearOfProduction}"/>
+    </rich:column>
+
+    <rich:column >
+        <f:facet name="header">#{msg.carEngineCAP}<sup>3</sup></f:facet>
+            <h:outputText value="#{car.engineCap}"/>
+    </rich:column>
+    
+    <rich:column >
+        <f:facet name="header">#{msg.carFuelType}</f:facet>
+            <h:outputText value="#{car.fuelType}"/>
+    </rich:column>
+    
+    <rich:column sortBy="#{car.price}">
+        <f:facet name="header">#{msg.carPrice}</f:facet>
+            <h:outputText value="#{car.price}"/>
+    </rich:column>
+    
+				<h:column>
+					<f:facet name="header">#{msg.action}</f:facet>
+					<h:commandLink value="#{msg.actionDelete}" action="#{carBean.deleteCar}" />					
+				</h:column>
+    
+    <f:facet name="footer">
+    		<rich:dataScroller id="ds"></rich:dataScroller>
+    </f:facet>
+</rich:dataTable>
+<h:messages globalOnly="true" />
+		</h:form>
+
+	</ui:define>
+</ui:composition>

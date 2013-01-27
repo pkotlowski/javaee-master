@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<ui:define name="content">
+		<h:form id="carForm">
+			<h:panelGrid columns="3">
+
+				<h:outputText value="marka" />
+				<h:inputText id="make" value="#{carBean.car.make}" required="#{true}" >
+				<f:validateLength minimum="2" maximum="16" />
+				</h:inputText>
+				<h:message for="make" errorStyle="color:red; display:block" />
+				
+				<h:outputText value="model" />
+				<h:inputText id="model" value="#{carBean.car.model}" required="#{true}" >
+				<f:validateLength minimum ="5"/>
+				</h:inputText>
+				<h:message for="model" errorStyle="color:red; display:block" />
+					
+				<h:outputText value="rok produkcji" />
+				<h:inputText id="yearOfProduction" value="#{carBean.car.yearOfProduction}" required="#{true}" >
+				 <f:validator validatorId="com.example.jeedemo.domain.YearOfProductionValidator" />
+				</h:inputText>
+				<h:message for="yearOfProduction" errorStyle="color:red; display:block"/>
+					
+				<h:outputText value="poj silnika" />
+				<h:inputText id="engineCap" value="#{carBean.car.engineCap}" required="#{true}" >
+				<f:validateDoubleRange minimum="500" maksimum="1000"/>
+				</h:inputText>
+				<h:message for="engineCap" errorStyle="color:red; display:block"/>
+				
+				<h:outputText value="cena" />
+				<h:inputText id="price" value="#{carBean.car.price}" required="#{true}" >
+				<f:validateDoubleRange minimum="1000"/>
+				</h:inputText>
+				<h:message for="price" errorStyle="color:red; display:block"/>
+					
+				<h:outputText value="typ paliwa" />
+				<h:selectOneRadio id="fuelType" value="#{carBean.car.fuelType}" required="#{true}" >
+				<f:selectItem id="item1" itemLabel="Benzyna" itemValue="Gasoline" />
+        <f:selectItem id="item2" itemLabel="Diesel" itemValue="Oil" />
+        </h:selectOneRadio>
+					
+
+					
+			</h:panelGrid>
+
+			<h:commandButton value="OK"
+				action="#{carBean.addCar}" />
+<!-- 
+			<h:panelGrid>
+				<h:messages for="" />
+				<h:messages id="messages" showDetail="#{true}"
+					showSummary="#{false}" />
+			</h:panelGrid> -->
+
+		</h:form>
+
+	</ui:define>
+</ui:composition>

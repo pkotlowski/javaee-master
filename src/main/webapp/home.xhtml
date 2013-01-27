@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	template="/templates/default.xhtml"
+	xmlns:rich="http://richfaces.org/rich">
+	<ui:define name="content">
+	
+		<p>Aplikacja do obsługi serwisu przewozów </p>
+		
+		<h:outputStylesheet>
+		.pic-normal {
+        width: 120px;
+        border: 2px solid #ACBECE;
+        }
+ 
+        .wrap1 {
+        width: 190px;
+        height: 130px;
+        float: left;
+        }
+</h:outputStylesheet>
+		
+		    <a4j:outputPanel id="gallery">
+        <h:graphicImage value="/Images/indeks.jpeg"  alt="pic" />
+				<h:graphicImage value="/Images/indeks2.jpeg"  alt="pic" />
+				<h:graphicImage value="/Images/indeks3.jpeg"  alt="pic" />
+				<h:graphicImage value="/Images/indeks4.jpeg"  alt="pic" />
+				<h:graphicImage value="/Images/indeks5.jpeg"  alt="pic" />
+				<h:graphicImage value="/Images/indeks6.jpeg"  alt="pic" />
+				<h:graphicImage value="/Images/indeks7.jpeg"  alt="pic" />
+				<h:graphicImage value="/Images/indeks8.jpeg"  alt="pic" />
+				<h:graphicImage value="/Images/indeks9.jpeg"  alt="pic" />
+				<h:graphicImage value="/Images/indeks10.jpeg"  alt="pic" />
+				
+    </a4j:outputPanel>
+		
+		
+		
+		
+		<rich:jQuery selector="#gallery img" query="addClass('pic-normal')" />
+    <rich:jQuery selector="#gallery img" query="wrap('&lt;div class=\'wrap1\'&gt;&lt;/div&gt;')" />
+    <rich:jQuery selector="#gallery img" event="mouseover" query="jQuery(this).stop().animate({width:'180px'})" />
+    <rich:jQuery selector="#gallery img" event="mouseout" query="jQuery(this).stop().animate({width:'120px'} )" />
+		
+	</ui:define>
+</ui:composition>

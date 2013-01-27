@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+  <div>
+
+    
+    <h:outputStylesheet>
+        .cols {
+        vertical-align: top;
+        }
+    </h:outputStylesheet>
+    <h:form >
+        <h:panelGrid columns="2" columnClasses="cols,cols" >
+            <rich:panelMenu style="width:200px" itemMode="ajax" groupMode="ajax" groupExpandedLeftIcon="triangleUp"
+                groupCollapsedLeftIcon="triangleDown" topGroupExpandedRightIcon="chevronUp"
+                topGroupCollapsedRightIcon="chevronDown" itemLeftIcon="disc" >
+                <rich:panelMenuGroup label="#{msg.menuDrivers}" name="#{msg.menuDrivers}">
+                    <rich:panelMenuItem label="#{msg.menuAddEmployee}" name="#{msg.menuAddEmployee}" action="add?faces-redirect=true"/>
+                    <rich:panelMenuItem label="#{msg.menuHome}" name="#{msg.menuHome}" action="home?faces-redirect=true" />
+                    <rich:panelMenuItem label="#{msg.menuAllEmployees}" name="#{msg.menuAllEmployees}" action="showDrivers?faces-redirect=true" />
+                </rich:panelMenuGroup>
+                <rich:panelMenuGroup label="#{msg.menuCars}" name="#{msg.menuCars}">
+                    <rich:panelMenuItem label="#{msg.menuAddCar}" name="#{msg.menuAddCar}" action="addCar?faces-redirect=true"/>
+                    <rich:panelMenuItem label="#{msg.menuAllAvaliableCars}" name="#{msg.menuAllAvaliableCars}" action="allAvailableCars"/>
+                    <rich:panelMenuItem label="#{msg.menuPremiumCars}" name="#{msg.menuPremiumCars}" action="PremiumCars"/>                    
+                    <rich:panelMenuItem label="#{msg.menuStandardCars}" name="#{msg.menuStandardCars}" action="StandardCars"/>
+                    <rich:panelMenuItem label="#{msg.menuEconoCars}" name="#{msg.menuEconoCars}" action="EconomicCars"/>
+                    <rich:panelMenuItem label="#{msg.menuSearchCars}" name="#{msg.menuSearchCars}" action="SearchCars"/>
+                </rich:panelMenuGroup>
+                <rich:panelMenuGroup label="#{msg.menuDepartments}" name="#{msg.menuDepartments}">
+                    <rich:panelMenuItem label="#{msg.menuAllDepartments}" name="#{msg.menuAllDepartments}" action="allDepartments"/>
+                    <rich:panelMenuItem label="#{msg.menuAddDepartment}" name="#{msg.menuAddDepartment}" action="addDepartment"/>                    
+                </rich:panelMenuGroup>
+                <rich:panelMenuGroup label="#{msg.menuActions}" name="#{msg.menuActions}">
+                    <rich:panelMenuItem label="#{msg.menuAssignDriver}" name="#{msg.menuAssignDriver}" action="assignDriverToDept"/>
+                    <rich:panelMenuItem label="#{msg.menuRentCar}" name="I#{msg.menuRentCar}" action="sell?faces-redirect=true"/>                    
+                </rich:panelMenuGroup>
+            </rich:panelMenu>
+            
+        </h:panelGrid>
+    </h:form>
+    </div>
+</ui:composition>
+  
+  
+  
+  
+  
+<!-- 
+	<h:form>
+	  <ul>
+		<li>
+		  <h:commandLink action="home?faces-redirect=true">
+			<h:outputText value="#{msg.menuHome}" />
+		  </h:commandLink>
+		</li>
+		<li>
+		  <h:commandLink action="add?faces-redirect=true">
+			<h:outputText value="#{msg.menuAddEmployee}" />
+		  </h:commandLink></li>
+		<li>
+		  <h:commandLink action="showPersons?faces-redirect=true">
+			 <h:outputText value="#{msg.menuAllEmployees}" />
+		  </h:commandLink>
+		</li>
+		<li>
+		  <h:commandLink action="sell?faces-redirect=true">
+			 <h:outputText value="#{msg.menuSell}" />
+		  </h:commandLink>
+		</li>
+
+<li>
+		  <h:commandLink action="addCar?faces-redirect=true">
+			 <h:outputText value="#{msg.menuAddCar}" />
+		  </h:commandLink>
+		</li>
+		<li>
+		  <h:commandLink action="allAvailableCars">
+			 <h:outputText value="#{msg.menuAllAvaliableCars}" />
+		  </h:commandLink>
+		</li>
+		
+				<li>
+		  <h:commandLink action="SearchCars">
+			 <h:outputText value="SearchCars" />
+		  </h:commandLink>
+		</li>
+		  
+		  				<li>
+		  <h:commandLink action="EconoCars">
+			 <h:outputText value="EconoCars" />
+		  </h:commandLink>
+		</li>
+		
+				  				<li>
+		  <h:commandLink action="StandardCars">
+			 <h:outputText value="StandardCars" />
+		  </h:commandLink>
+		</li>
+		
+						  				<li>
+		  <h:commandLink action="PremiumCars">
+			 <h:outputText value="PremiumCars" />
+		  </h:commandLink>
+		</li>
+		
+		<li>
+		  <h:commandLink action="allDepartments">
+			 <h:outputText value="Dept" />
+		  </h:commandLink>
+		</li>
+		
+			<li>
+		  <h:commandLink action="assignDriverToDept">
+			 <h:outputText value="Dept assign" />
+		  </h:commandLink>
+		</li>
+		
+					<li>
+		  <h:commandLink action="addDepartment">
+			 <h:outputText value="add dept" />
+		  </h:commandLink>
+		</li>
+		  
+	</ul>
+   </h:form>
+  </div>
+</ui:composition>-->
