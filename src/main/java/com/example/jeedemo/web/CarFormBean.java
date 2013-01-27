@@ -57,7 +57,7 @@ public class CarFormBean implements Serializable {
 	// Actions
 	public String addCar() {
 		cm.addCar(car);
-		return "allAvailableCars";
+		return "allAvailableCars?faces-redirect=true";
 		//return null;
 	}
 

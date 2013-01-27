@@ -59,7 +59,7 @@ public class DriverFormBean implements Serializable {
 	// Actions
 	public String addDriver() {
 		pm.addDriver(driver);
-		return "showDrivers";
+		return "showDrivers?faces-redirect=true";
 		//return null;
 	}
 

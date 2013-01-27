@@ -8,7 +8,7 @@
 
 	<ui:define name="content">
 		<h:form>
-                    <rich:dataTable value="#{personBean.ownedCars}" var="item">
+                    <rich:dataTable value="#{driverBean.ownedCars}" var="item">
 			
 				<f:facet name="header">Rented cars</f:facet>
 				<rich:column>
@@ -23,7 +23,7 @@
 
                                 <rich:column>
 					<f:facet name="header">#{msg.action}</f:facet>
-                                        <h:commandButton value="#{msg.actionDelete}" action="#{personBean.disposeCar}" />
+                                        <h:commandButton value="#{msg.actionDelete}" action="#{driverBean.disposeCar}" />
                                 </rich:column>
 
                     </rich:dataTable>

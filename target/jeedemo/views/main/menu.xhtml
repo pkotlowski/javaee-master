@@ -18,26 +18,26 @@
             <rich:panelMenu style="width:200px" itemMode="ajax" groupMode="ajax" groupExpandedLeftIcon="triangleUp"
                 groupCollapsedLeftIcon="triangleDown" topGroupExpandedRightIcon="chevronUp"
                 topGroupCollapsedRightIcon="chevronDown" itemLeftIcon="disc" >
-                <rich:panelMenuGroup label="#{msg.menuDrivers}" name="#{msg.menuDrivers}">
+                <rich:panelMenuGroup label="#{msg.menuDrivers}" expanded="true"  name="#{msg.menuDrivers}">
                     <rich:panelMenuItem label="#{msg.menuAddEmployee}" name="#{msg.menuAddEmployee}" action="add?faces-redirect=true"/>
                     <rich:panelMenuItem label="#{msg.menuHome}" name="#{msg.menuHome}" action="home?faces-redirect=true" />
                     <rich:panelMenuItem label="#{msg.menuAllEmployees}" name="#{msg.menuAllEmployees}" action="showDrivers?faces-redirect=true" />
                 </rich:panelMenuGroup>
-                <rich:panelMenuGroup label="#{msg.menuCars}" name="#{msg.menuCars}">
+                <rich:panelMenuGroup label="#{msg.menuCars}" expanded="true" name="#{msg.menuCars}">
                     <rich:panelMenuItem label="#{msg.menuAddCar}" name="#{msg.menuAddCar}" action="addCar?faces-redirect=true"/>
-                    <rich:panelMenuItem label="#{msg.menuAllAvaliableCars}" name="#{msg.menuAllAvaliableCars}" action="allAvailableCars"/>
-                    <rich:panelMenuItem label="#{msg.menuPremiumCars}" name="#{msg.menuPremiumCars}" action="PremiumCars"/>                    
-                    <rich:panelMenuItem label="#{msg.menuStandardCars}" name="#{msg.menuStandardCars}" action="StandardCars"/>
-                    <rich:panelMenuItem label="#{msg.menuEconoCars}" name="#{msg.menuEconoCars}" action="EconomicCars"/>
-                    <rich:panelMenuItem label="#{msg.menuSearchCars}" name="#{msg.menuSearchCars}" action="SearchCars"/>
+                    <rich:panelMenuItem label="#{msg.menuAllAvaliableCars}" name="#{msg.menuAllAvaliableCars}" action="allAvailableCars?faces-redirect=true"/>
+                    <rich:panelMenuItem label="#{msg.menuPremiumCars}" name="#{msg.menuPremiumCars}" action="PremiumCars?faces-redirect=true"/>                    
+                    <rich:panelMenuItem label="#{msg.menuStandardCars}" name="#{msg.menuStandardCars}" action="StandardCars?faces-redirect=true"/>
+                    <rich:panelMenuItem label="#{msg.menuEconoCars}" name="#{msg.menuEconoCars}" action="EconomicCars?faces-redirect=true"/>
+                    <rich:panelMenuItem label="#{msg.menuSearchCars}" name="#{msg.menuSearchCars}" action="SearchCars?faces-redirect=true"/>
                 </rich:panelMenuGroup>
-                <rich:panelMenuGroup label="#{msg.menuDepartments}" name="#{msg.menuDepartments}">
-                    <rich:panelMenuItem label="#{msg.menuAllDepartments}" name="#{msg.menuAllDepartments}" action="allDepartments"/>
-                    <rich:panelMenuItem label="#{msg.menuAddDepartment}" name="#{msg.menuAddDepartment}" action="addDepartment"/>                    
+                <rich:panelMenuGroup label="#{msg.menuDepartments}" expanded="true" name="#{msg.menuDepartments}">
+                    <rich:panelMenuItem label="#{msg.menuAllDepartments}" name="#{msg.menuAllDepartments}" action="allDepartments?faces-redirect=true"/>
+                    <rich:panelMenuItem label="#{msg.menuAddDepartment}" name="#{msg.menuAddDepartment}" action="addDepartment?faces-redirect=true"/>                    
                 </rich:panelMenuGroup>
-                <rich:panelMenuGroup label="#{msg.menuActions}" name="#{msg.menuActions}">
-                    <rich:panelMenuItem label="#{msg.menuAssignDriver}" name="#{msg.menuAssignDriver}" action="assignDriverToDept"/>
-                    <rich:panelMenuItem label="#{msg.menuRentCar}" name="I#{msg.menuRentCar}" action="sell?faces-redirect=true"/>                    
+                <rich:panelMenuGroup label="#{msg.menuActions}" expanded="true" name="#{msg.menuActions}">
+                    <rich:panelMenuItem label="#{msg.menuAssignDriver}" name="#{msg.menuAssignDriver}" action="assignDriverToDept?faces-redirect=true"/>
+                    <rich:panelMenuItem label="#{msg.menuRentCar}" name="I#{msg.menuRentCar}" action="sell?faces-redirect=true?faces-redirect=true"/>                    
                 </rich:panelMenuGroup>
             </rich:panelMenu>
             
