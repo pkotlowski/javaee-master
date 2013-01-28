@@ -5,15 +5,14 @@
 package com.example.jeedemo.service;
 
 import com.example.jeedemo.domain.Department;
+import com.example.jeedemo.domain.Driver;
+import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-/**
- *
- * @author Piotr
- */
+
 @Stateless
 public class DepartmentManager {
     
@@ -24,10 +23,18 @@ public class DepartmentManager {
             department.setId(null);
             em.persist(department);
         }
+   
         
         @SuppressWarnings("unchecked")	//wymuszenie poprawnosci na kompilatorze
 	public List<Department> getAllDepartments() {
 		return em.createNamedQuery("department.all").getResultList();
 	}
         
+        public List<Driver> getMembers(Department department) {		
+                department = em.find(Department.class, department.getId());		
+		List<Driver> drivers = new ArrayList<Driver>(department.getDrivers());
+		return drivers;
+	}
+        
+
 }

@@ -7,29 +7,21 @@
 	xmlns:a4j="http://richfaces.org/a4j"
 	xmlns:rich="http://richfaces.org/rich">
 
-	<ui:define name="content">
-	
-		<h:form id="departmentForm">
+		<ui:define name="content">
+		<h:form id="carForm">
 			<h:panelGrid columns="3">
-				
-				<!-- validacje dla imienia zrobic z h:validate -->
 
-				<h:outputText value="#{msg.driverFirstNameLabel}" />
-                                <h:inputText id="name" value="#{departmentFormBean.department.name}" required="#{true}">				
-				
-				</h:inputText>							
-				
+                            <h:outputText value="#{msg.departmentName}" />
+                                <h:inputText id="Name" value="#{departmentFormBean.department.name}" required="#{true}" >
+				<f:validateLength minimum="2" maximum="16" />
+				</h:inputText>
+				<h:message for="Name" errorStyle="color:red; display:block" />			
+					
+
+					
 			</h:panelGrid>
 
-                    <h:commandButton value="#{msg.driverAddLabel}" action="#{departmentBean.addDepartment}" />
-			
-			<h:panelGrid>
-				<h:messages id="messages" showDetail="#{true}"
-					showSummary="#{false}" />
-			</h:panelGrid>
-			
-			
-		</h:form>
-
+			<h:commandButton value="OK" action="#{departmentFormBean.addDepartment()}" />
+                </h:form>
 	</ui:define>
 </ui:composition>

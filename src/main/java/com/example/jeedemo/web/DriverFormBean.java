@@ -1,24 +1,19 @@
 package com.example.jeedemo.web;
 
+import com.example.jeedemo.domain.Car;
+import com.example.jeedemo.domain.Driver;
+import com.example.jeedemo.service.DriverManager;
+import com.example.jeedemo.service.SellingManager;
 import java.io.Serializable;
-import java.lang.annotation.Retention;
-import java.text.DateFormat;
-
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.component.UIInput;
 import javax.faces.context.FacesContext;
-import javax.faces.convert.Converter;
 import javax.faces.model.ListDataModel;
 import javax.faces.validator.ValidatorException;
 import javax.inject.Inject;
 import javax.inject.Named;
-
-import com.example.jeedemo.domain.Car;
-import com.example.jeedemo.domain.Driver;
-import com.example.jeedemo.service.DriverManager;
-import com.example.jeedemo.service.SellingManager;
 
 @SessionScoped
 @Named("driverBean")
@@ -54,6 +49,11 @@ public class DriverFormBean implements Serializable {
 	public ListDataModel<Car> getOwnedCars() {
 		ownedCars.setWrappedData(pm.getOwnedCars(driverToShow));
 		return ownedCars;
+	}
+        
+        public ListDataModel<Driver> getAllUnassignedDrivers() {
+		drivers.setWrappedData(pm.getAllUnassignedDrivers());
+		return drivers;
 	}
 	
 	// Actions

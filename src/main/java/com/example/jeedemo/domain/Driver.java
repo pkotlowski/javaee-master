@@ -1,5 +1,6 @@
 package com.example.jeedemo.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -21,9 +22,10 @@ import javax.validation.constraints.Size;
 
 @Entity
 @NamedQueries({ 
-	@NamedQuery(name = "driver.all", query = "Select p from Driver p")
+	@NamedQuery(name = "driver.all", query = "Select p from Driver p"),
+        @NamedQuery(name = "driver.unassigned", query="SELECT D FROM Driver D WHERE D.isDriverAssigned=FALSE")
 })
-public class Driver {
+public class Driver implements Serializable {
 
 	private Long id;
 
@@ -32,7 +34,9 @@ public class Driver {
 	private String pesel = "";
 	private String eMail="";
 	private Date dateOfBirth=new Date();
-	
+	private Boolean isDriverAssigned=false;
+
+ 
 
 	private List<Car> cars = new ArrayList<Car>();
 
@@ -85,6 +89,14 @@ public class Driver {
 	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
+        
+        public Boolean getIsDriverAssigned() {
+            return isDriverAssigned;
+        }
+
+        public void setIsDriverAssigned(Boolean isDriverAssigned) {
+            this.isDriverAssigned = isDriverAssigned;
+        }
 
 	
 

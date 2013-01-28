@@ -4,6 +4,7 @@
  */
 package com.example.jeedemo.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -21,7 +22,7 @@ import javax.persistence.OneToMany;
  */
 @NamedQuery(name="department.all", query="SELECT d from Department d")
 @Entity
-public class Department {
+public class Department implements Serializable {
     private Long id;
     private String name;
 

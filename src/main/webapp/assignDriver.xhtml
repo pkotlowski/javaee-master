@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<ui:define name="content">
+		<h:form id="driverForm">
+			<h:panelGrid columns="2">
+
+                            <h:outputText value="#{msg.driver}" />
+                            <h:selectOneMenu value="#{assignBean.driverId}">
+                                <f:selectItems value="#{assignBean.allUnassignedDrivers}" var="driver"
+						itemValue="#{driver.id}" itemLabel="#{driver.firstName} #{driver.lastName}" />
+				</h:selectOneMenu>
+
+                            <h:outputText value="#{msg.department}" />
+                            <h:selectOneMenu value="#{assignBean.departmentId}">
+                                <f:selectItems value="#{assignBean.allDepartments}" var="department"
+                                               itemValue="#{department.id}" itemLabel="#{department.id} #{department.name} " />
+				</h:selectOneMenu>
+
+
+			</h:panelGrid>
+
+                    <h:commandButton value="#{msg.cmdAssign}" action="#{assignBean.assignDriver()}" />
+
+			<h:panelGrid>
+				<h:messages id="messages" showDetail="#{true}"
+					showSummary="#{false}" />
+			</h:panelGrid>
+
+		</h:form>
+
+	</ui:define>
+</ui:composition>

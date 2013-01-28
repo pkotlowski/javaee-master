@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+        template="/templates/default.xhtml"
+        xmlns:rich="http://richfaces.org/rich">
+
+	<ui:define name="content">
+		<h:form>
+                    <rich:dataTable value="#{departmentBean.members}" var="member">
+			
+				<f:facet name="header">Team</f:facet>
+				<rich:column>
+                                    <f:facet name="header">#{msg.driverFirstNameLabel}</f:facet>
+                                    <h:outputText value="#{member.firstName}" />
+                                </rich:column>
+				<rich:column>
+                                    <f:facet name="header">#{msg.driverLastNameLabel}</f:facet>
+                                    <h:outputText value="#{member.lastName}" />
+                                </rich:column>
+				<rich:column>
+                                    <f:facet name="header">#{msg.driverDateOfBirth}</f:facet>
+                                    <h:outputText value="#{member.dateOfBirth}" />
+                                </rich:column>
+                                <rich:column>
+					<f:facet name="header">#{msg.action}</f:facet>
+                                        <h:commandButton value="#{msg.actionDelete}" action="#{departmentBean.disposeDriver()}" />
+                                </rich:column>
+                    </rich:dataTable>              
+		</h:form>
+	</ui:define>
+</ui:composition>

@@ -17,18 +17,23 @@ width="600" rows="15" reRender="ds"
 >
 
     <f:facet name="header">
-        <h:outputText value="#{msg.carAvailableCarsTableHeader}" />
+        <h:outputText value="ODDZIAŁY" />
     </f:facet>
 
    <rich:column>
-        <f:facet name="header">#{msg.carMake} </f:facet>        
+       <f:facet name="header">#{msg.department} </f:facet>        
         <h:outputText value="#{department.id}"/>
     </rich:column>
 
     <rich:column >
-        <f:facet name="header">#{msg.carModel}</f:facet>
+        <f:facet name="header">#{msg.departmentName}</f:facet>
         <h:outputText value="#{department.name}"/>
     </rich:column>
+                        
+   <rich:column>
+	<f:facet name="header">Wyświetl załogę dżi</f:facet>
+        <h:commandLink value=" Details " action="#{departmentBean.showDetails}"/>
+   </rich:column>
 
     
     <f:facet name="footer">
