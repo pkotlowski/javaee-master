@@ -11,13 +11,13 @@
 		<h:form id="driverForm">
 			<h:panelGrid columns="2">
 
-				<h:outputText value=" Driver " />
+                            <h:outputText value="#{msg.driver}" />
 				<h:selectOneMenu value="#{saleBean.driverId}">
 					<f:selectItems value="#{saleBean.allDrivers}" var="driver"
 						itemValue="#{driver.id}" itemLabel="#{driver.firstName} #{driver.lastName}" />
 				</h:selectOneMenu>
 
-				<h:outputText value=" Car" />
+                            <h:outputText value="#{msg.driver}" />
 				<h:selectOneMenu value="#{saleBean.carId}">
 					<f:selectItems value="#{saleBean.availableCars}" var="car"
 						itemValue="#{car.id}" itemLabel="#{car.id} #{car.make} #{car.model} #{car.yearOfProduction}" />

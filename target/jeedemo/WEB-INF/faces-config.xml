@@ -21,4 +21,9 @@
 		</locale-config>
 
 	</application>
+    <managed-bean>
+        <managed-bean-name>departmentFormBean</managed-bean-name>
+        <managed-bean-class>com.example.jeedemo.web.DepartmentFormBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
 </faces-config>

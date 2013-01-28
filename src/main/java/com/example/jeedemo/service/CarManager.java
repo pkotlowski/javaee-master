@@ -1,16 +1,13 @@
 package com.example.jeedemo.service;
 
 
+import com.example.jeedemo.domain.Car;
 import java.util.List;
-
 import javax.ejb.Stateless;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
-import com.example.jeedemo.domain.Car;
-import com.example.jeedemo.domain.Driver;
 
 
 @Stateless

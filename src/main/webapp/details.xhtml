@@ -22,6 +22,16 @@
                                 </rich:column>
 
                                 <rich:column>
+                                    <f:facet name="header">#{msg.carFuelType}</f:facet>
+                                    <h:outputText value="#{item.fuelType}" />
+                                </rich:column>
+                                
+                                <rich:column>
+                                    <f:facet name="header">#{msg.carPrice}</f:facet>
+                                    <h:outputText value="#{item.price}" />
+                                </rich:column>
+                                
+                                <rich:column>
 					<f:facet name="header">#{msg.action}</f:facet>
                                         <h:commandButton value="#{msg.actionDelete}" action="#{driverBean.disposeCar}" />
                                 </rich:column>
