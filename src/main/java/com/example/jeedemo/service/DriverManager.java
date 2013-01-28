@@ -29,6 +29,9 @@ public class DriverManager {
                         FacesContext facesContext = FacesContext.getCurrentInstance();
 			FacesMessage facesMessage = new FacesMessage("POdany kierowca jest przypisany do oddziału- Należy go najpierw usunąć");
 			facesContext.addMessage(null, facesMessage);
+                        
+                        //driver.getId();
+                        
                 }
                 else{             
 		em.remove(driver);

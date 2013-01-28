@@ -29,15 +29,6 @@ public class AssignManager {
 	}
 
 
-//	public void sellCar(Long driverId, Long carId) {
-//
-//		Driver driver = em.find(Driver.class, driverId);
-//		Car car = em.find(Car.class, carId);
-//		car.setSold(true);
-//
-//		driver.getCars().add(car);
-//	}
-
 	public void disposeDriver(Department department, Driver driver) {
 
 		//driver = em.find(Driver.class, driver.getId());
