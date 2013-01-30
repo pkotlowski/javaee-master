@@ -37,6 +37,12 @@ public class DriverManager {
 		em.remove(driver);
                 }
 	}
+        public void updateDriver(Driver driver){
+            //driver.setFirstName("sasasa");
+            //driver.setLastName("sasasa");
+            em.merge(driver);
+        }
+        
         @SuppressWarnings("unchecked")	//wymuszenie poprawnosci na kompilatorze
 	public List<Driver> getAllDrivers() {
 		return em.createNamedQuery("driver.all").getResultList();

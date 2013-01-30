@@ -17,7 +17,7 @@
 		<rich:message for="searchFormMake"/>
 		</h:form>
 		
-            <rich:dataTable value="#{searchBean.searchResults}" var="car">
+            <rich:dataTable value="#{searchBean.searchResults}" var="car" rows="15">
 
     <f:facet name="header">
         <h:outputText value="#{msg.carSearchResults}" />

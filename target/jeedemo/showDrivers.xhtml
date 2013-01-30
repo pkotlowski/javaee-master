@@ -49,9 +49,14 @@
                                 
 				<rich:column>
 					<f:facet name="header">#{msg.actionDetails}</f:facet>
-					<h:commandLink value=" Details " action="#{driverBean.showDetails}"/>
+                                        <h:commandLink value="#{msg.actionDetails}" action="#{driverBean.showDetails}"/>
 				</rich:column>
-
+                                
+				<rich:column>
+                                    <f:facet name="header">#{msg.actionEdit}</f:facet>
+                                    <h:commandLink value="#{msg.actionEdit}" action="#{driverBean.updateDriver()}"/>
+                                        
+				</rich:column>
 			</rich:dataTable>
                 <h:messages globalOnly="true" />
 		</h:form>

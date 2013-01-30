@@ -10,7 +10,7 @@
 		<h:form>
                     <rich:dataTable value="#{driverBean.ownedCars}" var="item">
 			
-				<f:facet name="header">Rented cars</f:facet>
+                        <f:facet name="header">#{msg.menuCars}</f:facet>
 				<rich:column>
                                     <f:facet name="header">#{msg.carMake}</f:facet>
 					<h:outputText value="#{item.make}" />

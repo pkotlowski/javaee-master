@@ -22,6 +22,15 @@ public class DriverFormBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Driver driver = new Driver();
+        private Driver updatedDriver  = new Driver();
+
+    public Driver getUpdatedDriver() {
+        return updatedDriver;
+    }
+
+    public void setUpdatedDriver(Driver updatedDriver) {
+        this.updatedDriver = updatedDriver;
+    }
 	private ListDataModel<Driver> drivers = new ListDataModel<Driver>();
 	
 	private Driver driverToShow = new Driver();
@@ -68,7 +77,17 @@ public class DriverFormBean implements Serializable {
 		pm.deleteDriver(driverToDelete);
 		return null;
 	}
-	
+        
+        public String updateDriver(){
+            updatedDriver = drivers.getRowData();
+            //pm.updateDriver(updatedDriver);
+            return "updateDriver";
+        }
+        public String upD(){
+            pm.updateDriver(updatedDriver);
+            return "showDrivers?faces-redirect=true";
+        }
+        
 	public String showDetails() {
 		driverToShow = drivers.getRowData();
 		return "details";
